@@ -10,7 +10,7 @@ pr:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-latest
 
 variables:
   PRISMA_API_URL: https://api2.eu.prismacloud.io
