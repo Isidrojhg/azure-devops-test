@@ -13,6 +13,8 @@ pool: 'mypool'
 
 variables:
   PRISMA_API_URL: $(PRISMA_API_URL)
+  PRISMA-ACCESS-KEY: $(PRISMA-ACCESS-KEY)
+  PRISMA-SECRET-KEY: $(PRISMA-SECRET-KEY)
 
 jobs:
 - job: Prisma_Cloud_Job
