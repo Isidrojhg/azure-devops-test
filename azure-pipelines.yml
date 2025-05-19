@@ -13,8 +13,7 @@ pool: 'mypool'
 
 variables:
   PRISMA_API_URL: $(PRISMA_API_URL)
-  PRISMA-ACCESS-KEY: $(PRISMA-ACCESS-KEY)
-  PRISMA-SECRET-KEY: $(PRISMA-SECRET-KEY)
+  LOG_LEVEL: 'debug'
 
 jobs:
 - job: Prisma_Cloud_Job
@@ -26,7 +25,7 @@ jobs:
     displayName: 'Use Python 3.8'
   - script: pip install checkov
     displayName: Install Checkov
-  - script: export LOG_LEVEL=debug | checkov -d . --use-enforcement-rules --bc-api-key $(PRISMA-ACCESS-KEY)::$(PRISMA-SECRET-KEY) --repo-id prismaiac/bicepgoat --branch main -o cli -o junitxml --output-file-path console,CheckovReport.xml
+  - script: checkov -d . --use-enforcement-rules --bc-api-key $(PRISMA-ACCESS-KEY)::$(PRISMA-SECRET-KEY) --repo-id prismaiac/bicepgoat --branch main -o cli -o junitxml --output-file-path console,CheckovReport.xml
     workingDirectory: $(System.DefaultWorkingDirectory)
     displayName: Run Checkov
    
