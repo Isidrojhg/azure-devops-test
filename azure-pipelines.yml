@@ -9,8 +9,7 @@ trigger:
 pr:
 - main
 
-pool:
-  vmImage: ubuntu
+pool: 'mypool'
 
 variables:
   PRISMA_API_URL: $(PRISMA_API_URL)
