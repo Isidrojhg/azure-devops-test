@@ -9,7 +9,7 @@ trigger:
 pr:
 - main
 
-pool: 'mypool'
+pool: 'Azure Pipelines'
 
 variables:
   LOG_LEVEL: 'debug'
